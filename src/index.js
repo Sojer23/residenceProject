@@ -19,23 +19,33 @@ module.exports = {
     deploy: _deploy,
     undeploy: _undeploy
 }
-
+/**
+ * @function Function that deploy the server after connecto to the DB
+ * @param {*} callback 
+ */
 function _deploy(callback) {
-    var serverPort = process.env.PORT || config.server.port;
-    if (!module.exports.server) {
-        module.exports.server = http.createServer(app);
-    }
-    module.exports.server.timeout = 24 * 3600 * 1000; //24h
 
-    module.exports.server.listen(serverPort, function () {
-        console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-        console.log("API HAS BEEN INITIALIZED");
+    config.dbConnection(app, function () {
+        var serverPort = process.env.PORT || config.server.port;
+        /* if (!module.exports.server) {
+             module.exports.server = http.createServer(app);
+         }*/
+
+        app.listen(serverPort, () => {
+            console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
+            console.log("API HAS BEEN INITIALIZED");
+        });
+
         if (callback) {
             callback();
         }
     });
 }
 
+/**
+ * @function Function used to undeploy the server, for tests
+ * @param {*} callback 
+ */
 function _undeploy(callback) {
     module.exports.server.close(function () {
         console.log('Server has been closed');
