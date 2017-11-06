@@ -43,7 +43,7 @@ var dbMenu;
  * @param {*} app express module, to pass to the controller
  * @param {*} callback 
  */
-function _dbConnection(app,callback) {
+function _dbConnection(app, callback) {
 
     var mdbURL = "mongodb://" + dbuser + ":" + dbpassword + "@ds113915.mlab.com:13915/residence-project";
 
@@ -62,7 +62,7 @@ function _dbConnection(app,callback) {
 
     });
 
-    if(callback){
+    if (callback) {
         callback();
     }
 }
