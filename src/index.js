@@ -2,9 +2,12 @@
 
 
 //Module dependences//
-var express = require('express'),
-    helmet = require('helmet'),
-    http = require('http');
+var express = require('express');
+var helmet = require('helmet');
+var body_parser = require('body-parser');
+var http = require('http');
+
+//var routes = require('./routes.js');
 
 //Files dependences//
 var config = require('./configurations/config.js');
@@ -12,6 +15,7 @@ var config = require('./configurations/config.js');
 
 var app = express();
 app.use(helmet());
+app.use(body_parser.json());
 app.use('/', express.static(__dirname + '/../public'));
 //app.use('/api', routes);
 
@@ -27,9 +31,9 @@ function _deploy(callback) {
 
     config.dbConnection(app, function () {
         var serverPort = process.env.PORT || config.server.port;
-        /* if (!module.exports.server) {
-             module.exports.server = http.createServer(app);
-         }*/
+        if (!module.exports.server) {
+            module.exports.server = http.createServer(app);
+        }
 
         app.listen(serverPort, () => {
             console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
