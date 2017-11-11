@@ -2,7 +2,7 @@
 
 var exports = module.exports = {};
 
-exports.register = function (app, dbMenu, BASE_API_PATH) {
+exports.menu = function (app, dbMenu, BASE_API_PATH) {
 
     //GET OVER MENU COLLECTION
     app.get(BASE_API_PATH + "/menu", function (request, response) {
@@ -21,7 +21,7 @@ exports.register = function (app, dbMenu, BASE_API_PATH) {
 
 
     //POST OVER MENU COLLECTION
-    app.post(BASE_API_PATH + "/insert", function (request, response) {
+    app.post(BASE_API_PATH + "menu/insert", function (request, response) {
 
         var newMenu = request.body;
 

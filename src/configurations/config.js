@@ -58,7 +58,7 @@ function _dbConnection(app, callback) {
         dbMenu = database.collection("menu");
 
         ///////////////////Connection with controller////////////////////////////
-        controllerMenu.register(app, dbMenu, BASE_API_PATH + "/v1");
+        controllerMenu.menu(app, dbMenu, BASE_API_PATH + "/v1");
 
     });
 
