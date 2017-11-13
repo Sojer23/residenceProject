@@ -1,36 +1,42 @@
 <html ng-app="ManagerApp">
-    <head>
-        <title>R.U. Pino Montano</title>
 
-        <!-- using materialize-->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <!--JAVASCRIPT-->
-        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
-        
-        <!--MATERIALIZE-->
-        <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" />
-        <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" media="screen,projection"/>
-        
-        <!--CARGA ANGULAR-->
-        <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-        <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+<head>
+    <title>R.U. Pino Montano</title>
 
-        <!--CARGA APPS-->
-        <script type="text/javascript" src="manager-app.js"></script>
+    <!-- using materialize-->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!--Carga controladores-->
-        <script type="text/javascript" src="/angularCtrls/menu-ctrl.js"></script>
-        <script type="text/javascript" src="/angularCtrls/info-ctrl.js"></script>
-        <script type="text/javascript" src="/angularCtrls/transport-ctrl.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    </head>
-    <body>
+    <!--JAVASCRIPT-->
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
+
+    <!--MATERIALIZE-->
+    <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" />
+    <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" media="screen,projection"
+    />
+
+    <!--CARGA ANGULAR-->
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+
+    <!--CARGA APPS-->
+    <script type="text/javascript" src="manager-app.js"></script>
+
+    <!--Carga controladores-->
+    <script type="text/javascript" src="/angularCtrls/menu-ctrl.js"></script>
+    <script type="text/javascript" src="/angularCtrls/info-ctrl.js"></script>
+    <script type="text/javascript" src="/angularCtrls/transport-ctrl.js"></script>
+
+</head>
+
+<body>
     <!-- el controlador se añade a una parte del body-->
     <div ng-view>
-            
-        </div>
-    </body>
+
+    </div>
+</body>
+
 </html>

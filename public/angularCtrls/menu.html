@@ -1,88 +1,244 @@
+<script type="text/javascript">
+    function mostrarMon() {
+        document.getElementById('oculto1').style.display = 'block';
+    }
+    function mostrarTue() {
+        document.getElementById('oculto2').style.display = 'block';
+    }
+    function mostrarWed() {
+        document.getElementById('oculto3').style.display = 'block';
+    }
+    function mostrarThu() {
+        document.getElementById('oculto4').style.display = 'block';
+    }
+    function mostrarFri() {
+        document.getElementById('oculto5').style.display = 'block';
+    }
+</script>
+
 <nav>
-        <div class="nav-wrapper green darken-2">
-            <div class="container">
-                    <span class="brand-logo"><h4>R.U. Pino Montano</h4></span>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                      <li><a href="#!/menu">Menú</a></li>
-                      <li><a href="#!/info">Noticias</a></li>
-                      <li><a href="#!/transport">Transporte</a></li>
-                      <li><a href="#!/about">Contacto</a></li>
-                    </ul>
-            </div>
-          
+    <div class="nav-wrapper green darken-2">
+        <div class="container">
+            <span class="brand-logo">
+                <h4>R.U. Pino Montano</h4>
+            </span>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#!/menu">Menú</a>
+                </li>
+                <li>
+                    <a href="#!/info">Noticias</a>
+                </li>
+                <li>
+                    <a href="#!/transport">Transporte</a>
+                </li>
+                <li>
+                    <a href="#!/about">Contacto</a>
+                </li>
+            </ul>
         </div>
+
+    </div>
 </nav>
 <div class="container">
 
-        <form action="" method="post">
-                <h5>Selecciona día:</h5><br /> 
-                <select name="programa">    
-                    <option value="mon" selected="selected">Lunes</option>
-                    <option value="tue">Martes</option>
-                    <option value="wed">Miercoles</option>
-                    <option value="thu">Jueves</option>
-                    <option value="fri">Viernes</option>
-                </select>
-             
-             </form>
-
-
     <table class="highlight">
-            <caption>Menú del {{menu.day}}</caption>
+        <caption>
+            <h3>Menú del {{menu.day}}</h3>
+        </caption>
 
-            <tr>
-                <th>Primero</th>
-                <td>{{menu.Almuerzo1}}</td>
-            </tr>
-            <tr>
-                    <th>Segundo</th>
-                    <td>{{menu.Almuerzo2}}</td>
-                </tr>
-                <trth>
-                        <th>Postre</th>
-                        <td>{{menu.Postre1}}</td>
-                    </tr>
-                    <tr>
-                            <th>Primero</th>
-                            <td>{{menu.Cena1}}</td>
-                        </tr>
-                        <tr>
-                                <th>Segundo</th>
-                                <td>{{menu.Cena2}}</td>
-                            </tr>
-                            <tr>
-                                    <th>Postre</th>
-                                    <td>{{menu.Postre2}}</td>
-                                </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{menu.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{menu.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{menu.Postre1}}</td>
+        </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{menu.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{menu.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{menu.Postre2}}</td>
+        </tr>
 
     </table>
 
-        <table class="highlight">
-                <caption><h5>Menú completo</h5></caption>
-                <thead>
-                    <tr>
-                        <th>Día</th>
-                        <th>Primero</th>
-                        <th>Segundo</th>
-                        <th>Postre</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="day in data">
-                        <td>{{day.day}}</td>
-                        <td>{{day.Almuerzo1}}</td>
-                        <td>{{day.Almuerzo2}}</td>
-                        <td>{{day.Postre1}}</td>
-                    </tr>
-                </tbody>
-            </table>
-</div>>
+    <h4>Menú completo</h4>
+
+    <button class="btn btn-primary" onclick="mostrarMon()">Lunes</button>
+    <table id="oculto1" style='display:none' class="highlight">
+        <caption>
+            <h5>Lunes</h5>
+        </caption>
+
+        <tr>
+            <th>Primero</th>
+            <td>{{day.mon.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.mon.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.mon.Postre1}}</td>
+        </tr>
+
+        <tr>
+            <th>Primero</th>
+            <td>{{day.mon.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.mon.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.mon.Postre2}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary" onclick="mostrarTue()">Martes</button>
+    <table id="oculto2" style='display:none' class="highlight">
+        <caption>
+            <h5>Martes</h5>
+        </caption>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.tue.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.tue.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.tue.Postre1}}</td>
+        </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.tue.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.tue.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.tue.Postre2}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary" onclick="mostrarWed()">Miércoles</button>
+    <table id="oculto3" style='display:none' class="highlight">
+        <caption>
+            <h5>Miércoles</h5>
+        </caption>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.wed.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.wed.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.wed.Postre1}}</td>
+        </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.wed.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.wed.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.wed.Postre2}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary" onclick="mostrarThu()">Jueves</button>
+    <table id="oculto4" style='display:none' class="highlight">
+        <caption>
+            <h5>Jueves</h5>
+        </caption>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.thu.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.thu.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.thu.Postre1}}</td>
+        </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.thu.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.thu.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.thu.Postre2}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-primary" onclick="mostrarFri()">Viernes</button>
+    <table id="oculto5" style='display:none' class="highlight">
+        <caption>
+            <h5>Viernes</h5>
+        </caption>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.fri.Almuerzo1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.fri.Almuerzo2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.fri.Postre1}}</td>
+        </tr>
+        <tr>
+            <th>Primero</th>
+            <td>{{day.fri.Cena1}}</td>
+        </tr>
+        <tr>
+            <th>Segundo</th>
+            <td>{{day.fri.Cena2}}</td>
+        </tr>
+        <tr>
+            <th>Postre</th>
+            <td>{{day.fri.Postre2}}</td>
+        </tr>
+    </table>
+</div>
 
 <footer class="page-footer green darken-2">
-            <div class="footer-copyright">
-                    <div class="container">
-                    © 2017 José Gallardo Gallardo.
-                    </div>
-                  </div>
-        
-      </footer>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 José Gallardo Gallardo.
+        </div>
+    </div>
+
+</footer>

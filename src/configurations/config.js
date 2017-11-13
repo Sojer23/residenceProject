@@ -34,8 +34,8 @@ function _addConfiguration(uri, encoding) {
 
 
 
-var dbuser = process.env.MONGO_USER?process.env.MONGO_USER:"sojer_admin";
-var dbpassword = process.env.MONGO_PASSWORD?process.env.MONGO_PASSWORD: "sojer_admin";
+var dbuser = process.env.MONGO_USER;
+var dbpassword = process.env.MONGO_PASSWORD;
 
 var dbMenu;
 /**
