@@ -13,10 +13,14 @@
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/materialize/dist/js/materialize.min.js"></script>
 
+    <!--JQUERY-->
+    <script src="js/init.js"></script>
     <!--MATERIALIZE-->
     <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" />
     <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css" type="text/css" media="screen,projection"
     />
+    <!-- css -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
     <!--CARGA ANGULAR-->
     <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
@@ -33,10 +37,77 @@
 </head>
 
 <body>
-    <!-- el controlador se añade a una parte del body-->
-    <div ng-view>
+    <header>
+        <nav class="green darken-2">
+            <div class="nav-wrapper container" role="navigation">
+                <a id="logo-container" href="#" ui-sref="/()" class="">
+                    <b>R.U. Pino Montano</b>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#!/menu">
+                            Menú</a>
+                    </li>
+                    <!--data-activates="reportsDropdown"  dropdown-button -->
+                    <li>
+                        <a href="#!/info">
+                            Noticias</a>
+                    </li>
+                    <li>
+                        <a href="#!/transport">
+                            Transporte</a>
+                    </li>
 
-    </div>
+                    <li>
+                        <a href="#!/about">
+                            Contacto</a>
+                    </li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li>
+                        <a href="#!/menu">
+                            <i class="material-icons">restaurant_menu</i>Menú</a>
+                    </li>
+                    <!--data-activates="reportsDropdown"  dropdown-button -->
+                    <li>
+                        <a href="#!/info">
+                            <i class="material-icons">new_releases</i>Noticias</a>
+                    </li>
+                    <li>
+                        <a href="#!/transport">
+                            <i class="material-icons">directions_bike</i>Transporte</a>
+                    </li>
+
+                    <li>
+                        <a href="#!/about">
+                            <i class="material-icons">contact_mail</i>Contacto</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="ribbon">
+            <span>BETA</span>
+        </div>
+        <!-- el controlador se añade a una parte del body-->
+        <div class="container">
+            <div class="section">
+                <div ng-view></div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer green darken-2">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 José Gallardo Gallardo.
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
